@@ -1,0 +1,79 @@
+/* Prevent text and elements from being highlightable */
+* {
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Young Serif', serif;
+}
+
+.container {
+    display: flex;
+    width: calc(100vw - 60px); /* 30px padding on each side */
+    height: calc(100vh - 60px); /* 30px padding on top and bottom */
+    margin: 30px; /* Add margin to center the container */
+}
+
+.partition {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, margin 0.3s ease;
+    margin: 20px; /* Initial margin */
+    position: relative;
+    filter: blur(0); /* Initial blur value */
+}
+
+.partition:hover {
+    transform: scale(0.8); /* 20% smaller */
+    margin: 10px; /* Shrunk margin */
+    filter: blur(0); /* No blur on hover */
+}
+
+.partition:not(:hover) {
+    transition: transform 0.3s ease, margin 0.3s ease, filter 0.3s ease; /* Added filter transition */
+    filter: blur(4px); /* 30% blur for non-hovered partitions */
+}
+
+.partition:nth-child(1) {
+    background-color: rgba(255, 195, 160, 0.7); /* Pastel Orange with 70% opacity */
+    background-image: url('https://cdnb.artstation.com/p/assets/images/images/044/042/003/4k/son-nguyen-jinx-arecane.jpg?1695449008'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black; /* Text color */
+    mix-blend-mode: difference; /* Blend mode for inverting text color */
+}
+
+.partition:nth-child(2) {
+    background-color: rgba(167, 233, 225, 0.7); /* Pastel Blue with 70% opacity */
+    background-image: url('https://cdnb.artstation.com/p/assets/images/images/044/042/003/4k/son-nguyen-jinx-arecane.jpg?1695449008'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black; /* Text color */
+    mix-blend-mode: difference; /* Blend mode for inverting text color */
+}
+
+.partition:nth-child(3) {
+    background-color: rgba(255, 218, 193, 0.7); /* Pastel Yellow with 70% opacity */
+    background-image: url('https://cdnb.artstation.com/p/assets/images/images/044/042/003/4k/son-nguyen-jinx-arecane.jpg?1695449008'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black; /* Text color */
+    mix-blend-mode: difference; /* Blend mode for inverting text color */
+}
+
+.text {
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.5); /* White rectangle background with 50% opacity */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners for the text rectangle */
+}
